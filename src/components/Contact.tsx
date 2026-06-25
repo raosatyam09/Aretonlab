@@ -123,7 +123,7 @@ export function Contact() {
                   ].map(({ Icon, href }, i) => (
                     <a key={i} href={href}
                        className="w-11 h-11 rounded-full border border-[rgba(123,94,248,0.2)] bg-[rgba(17,17,32,0.6)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
-                      <Icon className="w-4.5 h-4.5" />
+                      <Icon className="w-4 h-4" />
                     </a>
                   ))}
                 </div>
