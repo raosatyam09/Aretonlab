@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Github } from "lucide-react";
+import { IconLinkedIn, IconX, IconGitHub } from "@/components/SocialIcons";
 
 export function Footer() {
   return (
@@ -50,7 +50,7 @@ export function Footer() {
             © {new Date().getFullYear()} Areton Labs · Built at the edge of the possible.
           </div>
           <div className="flex gap-3">
-            {[Linkedin, Twitter, Github].map((Icon, i) => (
+            {[IconLinkedIn, IconX, IconGitHub].map((Icon, i) => (
               <a key={i} href="#"
                  className="w-9 h-9 rounded-full border border-[rgba(123,94,248,0.15)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
                 <Icon className="w-4 h-4" />

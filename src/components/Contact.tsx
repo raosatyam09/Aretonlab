@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { IconLinkedIn, IconX, IconGitHub } from "@/components/SocialIcons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -116,9 +117,9 @@ export function Contact() {
                 <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Follow</div>
                 <div className="flex gap-3">
                   {[
-                    { Icon: Linkedin, href: "#" },
-                    { Icon: Twitter, href: "#" },
-                    { Icon: Github, href: "#" },
+                    { Icon: IconLinkedIn, href: "#" },
+                    { Icon: IconX, href: "#" },
+                    { Icon: IconGitHub, href: "#" },
                   ].map(({ Icon, href }, i) => (
                     <a key={i} href={href}
                        className="w-11 h-11 rounded-full border border-[rgba(123,94,248,0.2)] bg-[rgba(17,17,32,0.6)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
