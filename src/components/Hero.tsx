@@ -122,22 +122,58 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Frangipani */}
+      {/* Frangipani — aligned to "gap" headline, extending down to typewriter */}
       <motion.div
-        style={{ rotate: flowerRotate, y: flowerY, opacity: flowerOpacity }}
-        className="pointer-events-none absolute bottom-10 right-6 md:bottom-16 md:right-16 z-10"
+        style={{ rotate: flowerRotate, y: flowerY, scale: flowerScale, opacity: flowerOpacity }}
+        className="pointer-events-none absolute right-4 md:right-16 lg:right-24 top-36 md:top-44 lg:top-48 z-10"
       >
-        <div className="relative">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          className="relative"
+        >
           <div className="absolute inset-0 rounded-full"
                style={{ background: "radial-gradient(circle, rgba(255,210,140,0.35), transparent 60%)", filter: "blur(30px)" }} />
           <img
             src={frangipani}
             alt=""
-            width={220}
-            height={220}
-            className="relative w-[110px] h-[110px] md:w-[200px] md:h-[200px] object-contain drop-shadow-[0_0_25px_rgba(255,220,160,0.25)]"
+            width={260}
+            height={260}
+            className="relative w-[140px] h-[140px] md:w-[220px] md:h-[220px] lg:w-[260px] lg:h-[260px] object-contain drop-shadow-[0_0_25px_rgba(255,220,160,0.3)]"
           />
-        </div>
+        </motion.div>
+
+        {/* Sparkles on vanish */}
+        <motion.div
+          style={{ opacity: sparkleOpacity, scale: sparkleScale }}
+          className="absolute inset-0 pointer-events-none"
+        >
+          {[
+            { top: "10%", left: "50%", d: 0 },
+            { top: "30%", left: "85%", d: 0.15 },
+            { top: "60%", left: "92%", d: 0.3 },
+            { top: "82%", left: "60%", d: 0.45 },
+            { top: "70%", left: "15%", d: 0.6 },
+            { top: "35%", left: "8%", d: 0.2 },
+            { top: "20%", left: "25%", d: 0.5 },
+            { top: "50%", left: "50%", d: 0.1 },
+          ].map((s, i) => (
+            <motion.span
+              key={i}
+              animate={{ opacity: [0.2, 1, 0.2], scale: [0.6, 1.4, 0.6] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut", delay: s.d }}
+              className="absolute block rounded-full"
+              style={{
+                top: s.top,
+                left: s.left,
+                width: i % 2 ? 4 : 6,
+                height: i % 2 ? 4 : 6,
+                background: "radial-gradient(circle, rgba(255,240,200,1), rgba(255,210,140,0.4) 60%, transparent 70%)",
+                boxShadow: "0 0 12px rgba(255,220,160,0.9), 0 0 24px rgba(123,94,248,0.5)",
+              }}
+            />
+          ))}
+        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}
