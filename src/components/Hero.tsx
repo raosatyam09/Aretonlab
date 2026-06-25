@@ -49,7 +49,7 @@ export function Hero() {
   const flowerY = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const flowerOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.4, 0]);
 
-  const ease = [0.22, 1, 0.36, 1] as const;
+  const ease = "easeOut" as const;
 
   return (
     <section ref={ref} id="top" className="relative min-h-screen flex items-center overflow-hidden">

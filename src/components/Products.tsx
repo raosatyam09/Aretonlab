@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
 };
 
 function AreteVisual() {
@@ -111,7 +111,7 @@ export function Products() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, ease: "easeOut" as const }}
           whileHover={{ y: -4 }}
           className="glass-panel rounded-3xl p-8 md:p-14 relative overflow-hidden group"
           style={{ boxShadow: "0 40px 120px -40px rgba(123,94,248,0.45)" }}
@@ -155,7 +155,7 @@ export function Products() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, ease: "easeOut" as const }}
           className="glass-panel rounded-3xl p-8 md:p-14 mt-10 opacity-80 hover:opacity-100 transition-opacity relative overflow-hidden"
           style={{ borderColor: "rgba(123,94,248,0.1)" }}
         >
