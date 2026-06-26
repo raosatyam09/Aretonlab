@@ -1,48 +1,5 @@
 import { motion } from "framer-motion";
-
-function OrbitalSphere() {
-  return (
-    <div className="relative aspect-square w-full max-w-[500px] mx-auto">
-      <div className="absolute inset-0 rounded-full"
-        style={{ background: "radial-gradient(circle, rgba(123,94,248,0.2), transparent 70%)", filter: "blur(40px)" }} />
-      <motion.svg
-        viewBox="0 0 400 400"
-        className="relative w-full h-full"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 80, ease: "linear", repeat: Infinity }}
-      >
-        <defs>
-          <radialGradient id="g1" cx="50%" cy="50%">
-            <stop offset="0%" stopColor="#9F6EFF" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#7B5EF8" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <circle cx="200" cy="200" r="160" fill="url(#g1)" />
-        {/* Latitudes */}
-        {[...Array(9)].map((_, i) => {
-          const ry = 20 + i * 18;
-          return <ellipse key={`lat${i}`} cx="200" cy="200" rx="160" ry={ry} fill="none" stroke="#7B5EF8" strokeOpacity={0.25} strokeWidth="0.6" />;
-        })}
-        {/* Longitudes */}
-        {[...Array(8)].map((_, i) => (
-          <ellipse key={`lon${i}`} cx="200" cy="200" rx={160 - i * 18} ry="160" fill="none" stroke="#7B5EF8" strokeOpacity={0.25} strokeWidth="0.6" />
-        ))}
-        <circle cx="200" cy="200" r="160" fill="none" stroke="#9F6EFF" strokeOpacity="0.6" strokeWidth="1" />
-        {/* Orbits */}
-        <ellipse cx="200" cy="200" rx="190" ry="60" fill="none" stroke="#9F6EFF" strokeOpacity="0.4" strokeWidth="0.8" transform="rotate(20 200 200)" />
-        <ellipse cx="200" cy="200" rx="190" ry="60" fill="none" stroke="#9F6EFF" strokeOpacity="0.3" strokeWidth="0.8" transform="rotate(-30 200 200)" />
-      </motion.svg>
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 20, ease: "linear", repeat: Infinity }}
-        className="absolute inset-0"
-      >
-        <div className="absolute top-1/2 left-0 w-2.5 h-2.5 rounded-full bg-[var(--violet-light)]"
-          style={{ boxShadow: "0 0 20px rgba(159,110,255,0.8)" }} />
-      </motion.div>
-    </div>
-  );
-}
+import { Earth3D } from "./Earth3D";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
