@@ -1,7 +1,6 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
-import frangipani from "@/assets/frangipani.png";
 
 const WORDS = ["Innovation", "Technology", "Ideas", "Solutions", "Possibilities", "Opportunities"];
 
