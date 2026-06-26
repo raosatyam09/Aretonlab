@@ -6,6 +6,7 @@ import { About } from "@/components/About";
 import { Products } from "@/components/Products";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { Butterfly } from "@/components/Butterfly";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +24,7 @@ function Index() {
   return (
     <div className="relative min-h-screen bg-[var(--void)] text-[var(--white-soft)] overflow-x-hidden">
       <Starfield />
+      <Butterfly />
       <div className="relative z-10">
         <Navbar />
         <main>
