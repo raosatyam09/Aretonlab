@@ -43,13 +43,6 @@ function Typewriter() {
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const flowerRotate = useTransform(scrollYProgress, [0, 1], [0, 75]);
-  const flowerY = useTransform(scrollYProgress, [0, 1], [0, 120]);
-  const flowerScale = useTransform(scrollYProgress, [0, 0.5, 0.8], [1, 1.05, 0.7]);
-  const flowerOpacity = useTransform(scrollYProgress, [0, 0.45, 0.75], [1, 0.55, 0]);
-  const sparkleOpacity = useTransform(scrollYProgress, [0, 0.3, 0.6, 0.85], [0, 0.85, 1, 0]);
-  const sparkleScale = useTransform(scrollYProgress, [0, 0.6, 0.85], [0.5, 1.3, 2.1]);
 
   const ease = "easeOut" as const;
 
