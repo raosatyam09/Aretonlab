@@ -81,6 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Areton Labs — We fill the quantum gap." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Areton Labs" },
+      { name: "twitter:title", content: "Areton Labs" },
+      { property: "og:description", content: "Areton Labs — We fill the quantum gap." },
+      { name: "twitter:description", content: "Areton Labs — We fill the quantum gap." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f7d1ef55-6767-4ddc-8293-a4c8e3e9d1cb" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f7d1ef55-6767-4ddc-8293-a4c8e3e9d1cb" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
