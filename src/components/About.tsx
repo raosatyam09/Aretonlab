@@ -53,7 +53,7 @@ export function About() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" as const }}
         >
-          <OrbitalSphere />
+          <Earth3D />
         </motion.div>
       </div>
     </section>
