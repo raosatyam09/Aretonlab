@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
-import { IconLinkedIn, IconX, IconGitHub } from "@/components/SocialIcons";
+import { IconLinkedIn } from "@/components/SocialIcons";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -100,10 +100,10 @@ export function Contact() {
             <div className="relative space-y-8 pt-4">
               <div>
                 <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Reach Us</div>
-                <a href="mailto:hello@aretonlabs.com"
+                <a href="mailto:founder@aretonlabs.com"
                    className="font-display text-2xl md:text-3xl text-[var(--white-soft)] hover:text-[var(--violet-light)] transition-colors inline-flex items-center gap-3">
                   <Mail className="w-6 h-6 text-[var(--violet-light)]" />
-                  hello@aretonlabs.com
+                  founder@aretonlabs.com
                 </a>
               </div>
               <div>
@@ -116,20 +116,16 @@ export function Contact() {
               <div>
                 <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Follow</div>
                 <div className="flex gap-3">
-                  {[
-                    { Icon: IconLinkedIn, href: "#" },
-                    { Icon: IconX, href: "#" },
-                    { Icon: IconGitHub, href: "#" },
-                  ].map(({ Icon, href }, i) => (
-                    <a key={i} href={href}
-                       className="w-11 h-11 rounded-full border border-[rgba(123,94,248,0.2)] bg-[rgba(17,17,32,0.6)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
-                      <Icon className="w-4 h-4" />
-                    </a>
-                  ))}
+                  <a href="https://www.linkedin.com/company/areton-labs" target="_blank" rel="noopener noreferrer"
+                     aria-label="LinkedIn"
+                     className="w-11 h-11 rounded-full border border-[rgba(123,94,248,0.2)] bg-[rgba(17,17,32,0.6)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
+                    <IconLinkedIn className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

@@ -29,9 +29,10 @@ export function Butterfly() {
     setSize();
     window.addEventListener("resize", setSize);
 
-    const HOME = () => ({ x: W - 160, y: H - 160 });
-    const DEST = () => ({ x: W + 80, y: -80 });
-    const CTRL = () => ({ x: W * 1.1, y: H * 0.07 });
+    // Start closer to the hero text (more toward center), end further off-screen
+    const HOME = () => ({ x: Math.min(W - 220, W * 0.62), y: H - 220 });
+    const DEST = () => ({ x: W + 140, y: -140 });
+    const CTRL = () => ({ x: W * 1.15, y: H * 0.05 });
 
     function getFlightPos(p: number) {
       const ease = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
@@ -42,11 +43,12 @@ export function Butterfly() {
       };
     }
 
+    // Slower wing flap across all phases
     function wingSpeed(p: number) {
-      if (p < 0.04) return 0.035;
-      if (p < 0.2) return 0.24;
-      if (p < 0.65) return 0.4;
-      return 0.28;
+      if (p < 0.04) return 0.018;
+      if (p < 0.2) return 0.12;
+      if (p < 0.65) return 0.2;
+      return 0.14;
     }
 
     let wingAngle = 0, wingDir = 1;
@@ -54,13 +56,12 @@ export function Butterfly() {
     let animId = 0;
 
     const onScroll = () => {
-      const maxS = document.body.scrollHeight - window.innerHeight;
-      // Map full butterfly flight to the first viewport of scroll (the hero region)
-      const heroProg = Math.min(1, window.scrollY / Math.max(1, window.innerHeight * 0.9));
+      // Longer flight path: map full butterfly journey across ~1.8 viewports of scroll
+      const heroProg = Math.min(1, window.scrollY / Math.max(1, window.innerHeight * 1.8));
       scrollProg = Math.min(1, Math.max(0, heroProg));
-      void maxS;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
+
 
     function drawButterfly(bx: number, by: number, p: number, wA: number) {
       ctx.clearRect(0, 0, W, H);

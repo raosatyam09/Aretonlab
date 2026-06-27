@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Earth3D } from "./Earth3D";
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -9,7 +9,7 @@ const fadeUp = {
 export function About() {
   return (
     <section id="about" className="relative py-32 md:py-40 px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -25,37 +25,24 @@ export function About() {
             Built to explore the edges of what's possible.
           </motion.h2>
 
-          <motion.div variants={fadeUp} className="mt-10 space-y-8">
-            <div>
-              <div className="font-mono-eyebrow text-[var(--dust)] mb-2">Vision</div>
-              <p className="text-[var(--white-soft)] text-lg leading-relaxed">
-                A future where intelligence is engineered, not improvised.
-              </p>
-            </div>
-            <div>
-              <div className="font-mono-eyebrow text-[var(--dust)] mb-2">Mission</div>
-              <p className="text-[var(--muted)] leading-relaxed">
-                We build AI and deep-tech systems that translate breakthrough research into real-world products — bridging the gap between scientific possibility and human-scale impact.
-              </p>
-            </div>
-            <div className="glass-panel rounded-2xl p-6 md:p-8">
-              <div className="font-mono-eyebrow text-[var(--violet-light)] mb-3">What We Do</div>
-              <p className="text-[var(--muted)] leading-relaxed">
-                From foundation models to orbital-grade infrastructure, we design systems that think, reason, and adapt. Our work spans AI-native products, autonomous workflows, and the quiet engineering that lets intelligent software scale with precision.
-              </p>
-            </div>
+          <motion.p variants={fadeUp} className="mt-8 text-[var(--white-soft)] text-lg leading-relaxed">
+            We exist to accelerate the translation of breakthrough ideas into real-world technology. Our north star: build things that matter, at the speed of curiosity.
+          </motion.p>
+
+          <motion.div variants={fadeUp} className="mt-10 space-y-6">
+            <p className="text-[var(--muted)] leading-relaxed">
+              Areton Labs is a product company focused on building AI-powered solutions for the future. We create intelligent, user-centric products that solve meaningful problems, simplify complexity, and deliver better experiences through technology.
+            </p>
+            <p className="text-[var(--muted)] leading-relaxed">
+              By combining AI, machine learning, and thoughtful product design, we aim to build systems that are not only powerful, but genuinely useful in the real world.
+            </p>
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, ease: "easeOut" as const }}
-        >
-          <Earth3D />
-        </motion.div>
+        {/* Earth is rendered as a sticky element via StickyEarth in the route */}
+        <div className="hidden lg:block" aria-hidden />
       </div>
     </section>
   );
 }
+
