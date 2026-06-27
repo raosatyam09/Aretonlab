@@ -124,9 +124,8 @@ export function Contact() {
                 </div>
               </div>
             </div>
-
-            </div>
           </motion.div>
+
         </div>
       </div>
     </section>
