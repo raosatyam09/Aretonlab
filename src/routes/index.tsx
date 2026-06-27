@@ -27,6 +27,8 @@ function Index() {
     <div className="relative min-h-screen bg-[var(--void)] text-[var(--white-soft)] overflow-x-hidden">
       <Starfield />
       <Butterfly />
+      <StickyEarth />
+
       <div className="relative z-10">
         <Navbar />
         <main>
