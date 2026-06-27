@@ -1,4 +1,4 @@
-import { IconLinkedIn, IconX, IconGitHub } from "@/components/SocialIcons";
+import { IconLinkedIn } from "@/components/SocialIcons";
 
 export function Footer() {
   return (
@@ -13,10 +13,11 @@ export function Footer() {
             <p className="mt-4 text-[var(--muted)] max-w-sm leading-relaxed">
               We fill the quantum gap. Engineering AI-native products and deep-tech infrastructure at the edge of the possible.
             </p>
-            <a href="mailto:hello@aretonlabs.com"
+            <a href="mailto:founder@aretonlabs.com"
                className="inline-block mt-6 text-[var(--white-soft)] hover:text-[var(--violet-light)] transition-colors">
-              hello@aretonlabs.com
+              founder@aretonlabs.com
             </a>
+
           </div>
 
           <div>
@@ -50,13 +51,13 @@ export function Footer() {
             © {new Date().getFullYear()} Areton Labs · Built at the edge of the possible.
           </div>
           <div className="flex gap-3">
-            {[IconLinkedIn, IconX, IconGitHub].map((Icon, i) => (
-              <a key={i} href="#"
-                 className="w-9 h-9 rounded-full border border-[rgba(123,94,248,0.15)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
-                <Icon className="w-4 h-4" />
-              </a>
-            ))}
+            <a href="https://www.linkedin.com/company/areton-labs" target="_blank" rel="noopener noreferrer"
+               aria-label="LinkedIn"
+               className="w-9 h-9 rounded-full border border-[rgba(123,94,248,0.15)] flex items-center justify-center text-[var(--muted)] hover:text-[var(--white-soft)] hover:border-[var(--violet)] transition-all">
+              <IconLinkedIn className="w-4 h-4" />
+            </a>
           </div>
+
         </div>
       </div>
     </footer>
