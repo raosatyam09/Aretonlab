@@ -7,6 +7,8 @@ import { Products } from "@/components/Products";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Butterfly } from "@/components/Butterfly";
+import { StickyEarth } from "@/components/StickyEarth";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
