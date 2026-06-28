@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
+import butterflyAsset from "@/assets/butterfly.png.asset.json";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -50,61 +51,26 @@ function AreteVisual() {
   );
 }
 
-/** Slow-flapping SVG butterfly used in the Englingen card */
+/** Slow-flapping butterfly used in the Englingen card — uses the brand PNG */
 function FlappingButterfly() {
   return (
     <div className="relative w-full aspect-[4/3] flex items-center justify-center">
-      <div className="absolute inset-0"
-        style={{ background: "radial-gradient(circle at 50% 50%, rgba(123,94,248,0.18), transparent 70%)" }} />
-      <motion.svg
-        viewBox="-120 -110 240 220"
-        className="w-2/3 h-2/3"
-        style={{ transformOrigin: "center" }}
-      >
-        <defs>
-          <radialGradient id="wingU" cx="0.5" cy="0.4" r="0.7">
-            <stop offset="0%" stopColor="#9F6EFF" stopOpacity="0.95" />
-            <stop offset="60%" stopColor="#7B5EF8" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="#3a2680" stopOpacity="0.7" />
-          </radialGradient>
-          <radialGradient id="wingL" cx="0.5" cy="0.6" r="0.7">
-            <stop offset="0%" stopColor="#7B5EF8" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#2d1f70" stopOpacity="0.6" />
-          </radialGradient>
-        </defs>
-
-        {/* Left wing group (flapping) */}
-        <motion.g
-          animate={{ scaleX: [-1, -0.35, -1] }}
-          transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "0px 0px" }}
-        >
-          <path d="M0,0 C-12,-22 -55,-50 -78,-34 C-105,-18 -100,22 -68,46 C-40,62 -12,34 0,12 Z"
-            fill="url(#wingU)" stroke="rgba(28,20,55,0.7)" strokeWidth="1.2" />
-          <path d="M0,10 C-10,24 -45,62 -62,68 C-84,74 -82,46 -60,24 C-44,12 -16,14 0,10 Z"
-            fill="url(#wingL)" stroke="rgba(28,20,55,0.7)" strokeWidth="1.2" />
-        </motion.g>
-
-        {/* Right wing group (flapping) */}
-        <motion.g
-          animate={{ scaleX: [1, 0.35, 1] }}
-          transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut" }}
-          style={{ transformOrigin: "0px 0px" }}
-        >
-          <path d="M0,0 C-12,-22 -55,-50 -78,-34 C-105,-18 -100,22 -68,46 C-40,62 -12,34 0,12 Z"
-            fill="url(#wingU)" stroke="rgba(28,20,55,0.7)" strokeWidth="1.2" />
-          <path d="M0,10 C-10,24 -45,62 -62,68 C-84,74 -82,46 -60,24 C-44,12 -16,14 0,10 Z"
-            fill="url(#wingL)" stroke="rgba(28,20,55,0.7)" strokeWidth="1.2" />
-        </motion.g>
-
-        {/* Body */}
-        <ellipse cx="0" cy="12" rx="4.5" ry="50" fill="#3a2c52" />
-        <circle cx="0" cy="-38" r="6" fill="#3a2c52" />
-        <path d="M-2,-42 Q-22,-72 -18,-84" stroke="#3a2c52" strokeWidth="1.2" fill="none" />
-        <path d="M2,-42 Q22,-72 18,-84" stroke="#3a2c52" strokeWidth="1.2" fill="none" />
-        <circle cx="-18" cy="-84" r="2.6" fill="#3a2c52" />
-        <circle cx="18" cy="-84" r="2.6" fill="#3a2c52" />
-      </motion.svg>
+      <div
+        className="absolute inset-0"
+        style={{ background: "radial-gradient(circle at 50% 50%, rgba(80,130,255,0.18), transparent 70%)" }}
+      />
+      <motion.img
+        src={butterflyAsset.url}
+        alt="Englingen"
+        draggable={false}
+        className="relative w-2/3 max-w-[260px] select-none"
+        style={{
+          transformOrigin: "50% 50%",
+          filter: "drop-shadow(0 20px 50px rgba(80,130,255,0.4))",
+        }}
+        animate={{ scaleX: [1, 0.55, 1], y: [0, -6, 0] }}
+        transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+      />
     </div>
   );
 }
