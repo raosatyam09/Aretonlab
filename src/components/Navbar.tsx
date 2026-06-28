@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import aretonLogo from "@/assets/areton-logo.png.asset.json";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,9 +33,17 @@ export function Navbar() {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between">
-          <a href="#top" className="font-display text-lg md:text-xl font-semibold tracking-tight">
-            <span className="text-[var(--white-soft)]">ARETON</span>{" "}
-            <span className="text-[var(--violet)]">LABS</span>
+          <a href="#top" className="flex items-center gap-3 font-display text-lg md:text-xl font-semibold tracking-tight">
+            <img
+              src={aretonLogo.url}
+              alt="Areton Labs"
+              className="h-9 md:h-11 w-auto"
+              style={{ filter: "invert(1) brightness(1.1)" }}
+            />
+            <span>
+              <span className="text-[var(--white-soft)]">ARETON</span>{" "}
+              <span className="text-[var(--violet)]">LABS</span>
+            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-10">
@@ -49,11 +58,7 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:block">
-            <a href="#products" className="btn-violet text-sm">
-              Try Arete <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+          <div className="hidden md:block w-[1px]" />
 
           <button
             className="md:hidden text-[var(--white-soft)]"
