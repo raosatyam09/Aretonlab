@@ -31,7 +31,7 @@ export function Butterfly() {
       const dt = (t - last) / 1000;
       last = t;
       // slow flap when resting, faster when in flight
-      const speed = scrollRef.current < 0.04 ? 0.9 : scrollRef.current < 0.7 ? 2.4 : 1.6;
+      const speed = scrollRef.current < 0.04 ? 1.8 : scrollRef.current < 0.7 ? 3.6 : 2.4;
       flapRef.current = (flapRef.current + dt * speed) % (Math.PI * 2);
       force((n) => (n + 1) % 1000);
       raf = requestAnimationFrame(tick);
@@ -54,7 +54,8 @@ export function Butterfly() {
 
   // Home: aligned with the "gap" line of the hero text on the right side.
   // The H1 starts ~pt-32 with three lines; "gap" is the second line — roughly 45% of viewport height.
-  const home = { x: Math.min(W - 180, W * 0.66), y: Math.max(180, H * 0.46) };
+  // Home: a bit lower and further right than before.
+  const home = { x: Math.min(W - 140, W * 0.74), y: Math.max(220, H * 0.56) };
   const dest = { x: W + 160, y: -160 };
   const ctrl = { x: W * 1.1, y: H * 0.08 };
 
@@ -70,7 +71,7 @@ export function Butterfly() {
   // wing flap: scaleX from ~0.55 to 1 via abs(sin)
   const flap = 0.55 + 0.45 * Math.abs(Math.sin(flapRef.current));
 
-  const baseSize = 170; // px
+  const baseSize = 220; // px
 
   return (
     <div
