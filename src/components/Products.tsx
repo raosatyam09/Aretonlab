@@ -98,7 +98,7 @@ function WaitlistForm() {
 }
 
 export function Products() {
-  const [demoOpen, setDemoOpen] = useState(false);
+  
 
   return (
     <section id="products" className="relative py-32 md:py-40 px-6 lg:px-10">
