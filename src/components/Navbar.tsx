@@ -74,10 +74,13 @@ export function Navbar() {
             className="fixed inset-0 z-[60] bg-[rgba(5,5,8,0.97)] backdrop-blur-xl md:hidden"
           >
             <div className="flex items-center justify-between h-16 px-6">
-              <span className="font-display text-lg font-semibold">
-                <span className="text-[var(--white-soft)]">ARETON</span>{" "}
-                <span className="text-[var(--violet)]">LABS</span>
-              </span>
+              <a href="#top" onClick={() => setOpen(false)} className="flex items-center gap-2">
+                <img
+                  src={aretonLogo.url}
+                  alt="Areton Labs"
+                  className="h-9 w-auto object-contain"
+                />
+              </a>
               <button onClick={() => setOpen(false)} aria-label="Close menu">
                 <X className="w-6 h-6" />
               </button>
