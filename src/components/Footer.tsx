@@ -1,4 +1,5 @@
 import { IconLinkedIn } from "@/components/SocialIcons";
+import aretonLogo from "@/assets/areton-logo.png.asset.json";
 
 export function Footer() {
   return (
@@ -6,10 +7,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="font-display text-xl font-semibold">
-              <span className="text-[var(--white-soft)]">ARETON</span>{" "}
-              <span className="text-[var(--violet)]">LABS</span>
-            </div>
+            <img
+              src={aretonLogo.url}
+              alt="Areton Labs"
+              className="h-12 w-auto object-contain"
+            />
             <p className="mt-4 text-[var(--muted)] max-w-sm leading-relaxed">
               We fill the quantum gap. Engineering AI-native products and deep-tech infrastructure at the edge of the possible.
             </p>
