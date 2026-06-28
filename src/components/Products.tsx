@@ -158,9 +158,6 @@ export function Products() {
                 <a href="#contact" className="btn-violet">
                   Try Arete <ArrowRight className="w-4 h-4" />
                 </a>
-                <button onClick={() => setDemoOpen(true)} className="btn-ghost">
-                  <Play className="w-4 h-4" /> See how it works
-                </button>
               </div>
             </div>
             <AreteVisual />
@@ -193,31 +190,6 @@ export function Products() {
           </div>
         </motion.div>
       </div>
-
-      {/* Demo video modal */}
-      <AnimatePresence>
-        {demoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={() => setDemoOpen(false)}
-            className="fixed inset-0 z-[80] bg-[rgba(5,5,8,0.85)] backdrop-blur-md flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden border border-[rgba(123,94,248,0.3)]"
-            >
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="Arete AI — See how it works"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
