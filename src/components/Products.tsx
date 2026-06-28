@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Sparkles, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import butterflyAsset from "@/assets/butterfly.png.asset.json";
 
 const fadeUp = {
@@ -10,43 +10,20 @@ const fadeUp = {
 
 function AreteVisual() {
   return (
-    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden"
+    <div
+      className="relative w-full aspect-video rounded-2xl overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0D0D14, #111120)",
         border: "1px solid rgba(123,94,248,0.25)",
         boxShadow: "0 30px 80px -30px rgba(123,94,248,0.4)",
-      }}>
-      <div className="absolute inset-0"
-        style={{ background: "radial-gradient(circle at 70% 30%, rgba(123,94,248,0.25), transparent 60%)" }} />
-      <div className="absolute inset-6 rounded-xl border border-[rgba(123,94,248,0.2)] bg-[rgba(5,5,8,0.6)] backdrop-blur-sm flex flex-col">
-        <div className="flex items-center gap-1.5 px-4 py-3 border-b border-[rgba(123,94,248,0.12)]">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#555568]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#555568]" />
-          <div className="w-2.5 h-2.5 rounded-full bg-[#555568]" />
-          <div className="ml-3 font-mono text-[10px] text-[var(--dust)]">arete.ai</div>
-        </div>
-        <div className="p-5 flex-1 flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <Sparkles className="w-3.5 h-3.5 text-[var(--violet-light)]" />
-            <span className="font-mono text-[10px] text-[var(--violet-light)] uppercase tracking-wider">Reasoning</span>
-          </div>
-          <motion.div initial={{ width: 0 }} whileInView={{ width: "85%" }} viewport={{ once: true }}
-            transition={{ duration: 1.6, ease: "easeOut" }} className="h-2 rounded-full violet-gradient" />
-          <motion.div initial={{ width: 0 }} whileInView={{ width: "60%" }} viewport={{ once: true }}
-            transition={{ duration: 1.6, delay: 0.2, ease: "easeOut" }} className="h-2 rounded-full bg-[rgba(159,110,255,0.4)]" />
-          <motion.div initial={{ width: 0 }} whileInView={{ width: "92%" }} viewport={{ once: true }}
-            transition={{ duration: 1.6, delay: 0.4, ease: "easeOut" }} className="h-2 rounded-full bg-[rgba(159,110,255,0.25)]" />
-          <div className="mt-auto grid grid-cols-3 gap-2">
-            {["Reason", "Plan", "Execute"].map((t, i) => (
-              <motion.div key={t} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ delay: 0.6 + i * 0.1 }}
-                className="rounded-lg border border-[rgba(123,94,248,0.18)] bg-[rgba(17,17,32,0.6)] py-2 text-center font-mono text-[10px] text-[var(--muted)]">
-                {t}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+      }}
+    >
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Arete AI — Product Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
     </div>
   );
 }
@@ -121,7 +98,7 @@ function WaitlistForm() {
 }
 
 export function Products() {
-  const [demoOpen, setDemoOpen] = useState(false);
+  
 
   return (
     <section id="products" className="relative py-32 md:py-40 px-6 lg:px-10">
@@ -181,9 +158,6 @@ export function Products() {
                 <a href="#contact" className="btn-violet">
                   Try Arete <ArrowRight className="w-4 h-4" />
                 </a>
-                <button onClick={() => setDemoOpen(true)} className="btn-ghost">
-                  <Play className="w-4 h-4" /> See how it works
-                </button>
               </div>
             </div>
             <AreteVisual />
@@ -216,31 +190,6 @@ export function Products() {
           </div>
         </motion.div>
       </div>
-
-      {/* Demo video modal */}
-      <AnimatePresence>
-        {demoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={() => setDemoOpen(false)}
-            className="fixed inset-0 z-[80] bg-[rgba(5,5,8,0.85)] backdrop-blur-md flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden border border-[rgba(123,94,248,0.3)]"
-            >
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                title="Arete AI — See how it works"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
