@@ -33,17 +33,12 @@ export function Navbar() {
         }`}
       >
         <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between">
-          <a href="#top" className="flex items-center gap-3 font-display text-lg md:text-xl font-semibold tracking-tight">
+          <a href="#top" className="flex items-center gap-3">
             <img
               src={aretonLogo.url}
               alt="Areton Labs"
-              className="h-9 md:h-11 w-auto"
-              style={{ filter: "invert(1) brightness(1.1)" }}
+              className="h-10 md:h-12 w-auto object-contain"
             />
-            <span>
-              <span className="text-[var(--white-soft)]">ARETON</span>{" "}
-              <span className="text-[var(--violet)]">LABS</span>
-            </span>
           </a>
 
           <div className="hidden md:flex items-center gap-10">
