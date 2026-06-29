@@ -52,10 +52,12 @@ export function Butterfly() {
   const { w: W, h: H } = size;
   if (!W || !H) return null;
 
-  // Home: aligned with the "gap" line of the hero text on the right side.
-  // The H1 starts ~pt-32 with three lines; "gap" is the second line — roughly 45% of viewport height.
-  // Home: a bit lower and further right than before.
-  const home = { x: Math.min(W - 140, W * 0.74), y: Math.max(220, H * 0.56) };
+  const isMobile = W < 1024;
+  // Home: mobile → top-right just below the hamburger menu button.
+  // Desktop → a bit lower-right, aligned with the "gap" line of hero text.
+  const home = isMobile
+    ? { x: W - 70, y: 110 }
+    : { x: Math.min(W - 140, W * 0.74), y: Math.max(220, H * 0.56) };
   const dest = { x: W + 160, y: -160 };
   const ctrl = { x: W * 1.1, y: H * 0.08 };
 
