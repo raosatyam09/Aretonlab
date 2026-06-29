@@ -73,7 +73,7 @@ export function Butterfly() {
   // wing flap: scaleX from ~0.55 to 1 via abs(sin)
   const flap = 0.55 + 0.45 * Math.abs(Math.sin(flapRef.current));
 
-  const baseSize = 220; // px
+  const baseSize = isMobile ? 110 : 220; // px
 
   return (
     <div
