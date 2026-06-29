@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { IconLinkedIn } from "@/components/SocialIcons";
 
 const fadeUp = {
@@ -104,6 +104,14 @@ export function Contact() {
                    className="font-display text-2xl md:text-3xl text-[var(--white-soft)] hover:text-[var(--violet-light)] transition-colors inline-flex items-center gap-3">
                   <Mail className="w-6 h-6 text-[var(--violet-light)]" />
                   founder@aretonlabs.com
+                </a>
+              </div>
+              <div>
+                <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Call Us</div>
+                <a href="tel:+11010101010"
+                   className="font-display text-xl md:text-2xl text-[var(--white-soft)] hover:text-[var(--violet-light)] transition-colors inline-flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-[var(--violet-light)]" />
+                  +1 010-101-0100
                 </a>
               </div>
               <div>
