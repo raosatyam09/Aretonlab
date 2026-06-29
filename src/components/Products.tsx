@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import butterflyAsset from "@/assets/butterfly.png.asset.json";
+import { Earth3D } from "@/components/Earth3D";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
