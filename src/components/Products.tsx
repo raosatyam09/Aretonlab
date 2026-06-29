@@ -104,6 +104,11 @@ export function Products() {
   return (
     <section id="products" className="relative py-32 md:py-40 px-6 lg:px-10">
       <div className="max-w-7xl mx-auto">
+        {/* Mobile-only Earth (sticky version is desktop-only) */}
+        <div className="lg:hidden mb-12 mx-auto w-[260px] h-[260px] sm:w-[320px] sm:h-[320px]">
+          <Earth3D />
+        </div>
+
         <motion.div
           initial="hidden" whileInView="show" viewport={{ once: true, margin: "-100px" }}
           variants={{ show: { transition: { staggerChildren: 0.12 } } }}
