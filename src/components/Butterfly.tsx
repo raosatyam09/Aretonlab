@@ -19,7 +19,7 @@ export function Butterfly() {
     window.addEventListener("resize", onResize);
 
     const onScroll = () => {
-      const p = Math.min(1, Math.max(0, window.scrollY / Math.max(1, window.innerHeight * 1.8)));
+      const p = Math.min(1, Math.max(0, window.scrollY / Math.max(1, window.innerHeight * 2.6)));
       setScroll(p);
     };
     onScroll();
@@ -31,7 +31,7 @@ export function Butterfly() {
       const dt = (t - last) / 1000;
       last = t;
       // slow flap when resting, faster when in flight
-      const speed = scrollRef.current < 0.04 ? 1.8 : scrollRef.current < 0.7 ? 3.6 : 2.4;
+      const speed = scrollRef.current < 0.04 ? 2.8 : scrollRef.current < 0.7 ? 5.2 : 3.6;
       flapRef.current = (flapRef.current + dt * speed) % (Math.PI * 2);
       force((n) => (n + 1) % 1000);
       raf = requestAnimationFrame(tick);
