@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import aretonLogo from "@/assets/areton-logo.png.asset.json";
+// import aretonLogo from "@/assets/areton-logo.png.asset.json";
+import aretonLogo from "@/assets/areton-logo.png";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +36,7 @@ export function Navbar() {
         <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
             <img
-              src={aretonLogo.url}
+              src={aretonLogo}
               alt="Areton Labs"
               className="h-10 md:h-12 w-auto object-contain"
             />
@@ -76,7 +77,7 @@ export function Navbar() {
             <div className="flex items-center justify-between h-16 px-6">
               <a href="#top" onClick={() => setOpen(false)} className="flex items-center gap-2">
                 <img
-                  src={aretonLogo.url}
+                  src={aretonLogo}
                   alt="Areton Labs"
                   className="h-9 w-auto object-contain"
                 />

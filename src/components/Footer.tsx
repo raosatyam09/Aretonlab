@@ -1,5 +1,6 @@
 import { IconLinkedIn } from "@/components/SocialIcons";
-import aretonLogo from "@/assets/areton-logo.png.asset.json";
+// import aretonLogo from "@/assets/areton-logo.png.asset.json";
+import aretonLogo from "@/assets/areton-logo.png";
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <img
-              src={aretonLogo.url}
+              src={aretonLogo}
               alt="Areton Labs"
               className="h-12 w-auto object-contain"
             />

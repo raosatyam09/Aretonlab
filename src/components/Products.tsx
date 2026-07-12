@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import butterflyAsset from "@/assets/butterfly.png.asset.json";
+// import butterflyAsset from "@/assets/butterfly.png.asset.json";
+import ButterflyImg from "@/assets/butterfly.png";
+
 import { Earth3D } from "@/components/Earth3D";
 
 const fadeUp = {
@@ -38,7 +40,7 @@ function FlappingButterfly() {
         style={{ background: "radial-gradient(circle at 50% 50%, rgba(80,130,255,0.18), transparent 70%)" }}
       />
       <motion.img
-        src={butterflyAsset.url}
+        src={ButterflyImg}
         alt="Englingen"
         draggable={false}
         className="relative w-2/3 max-w-[260px] select-none"

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import butterflyAsset from "@/assets/butterfly.png.asset.json";
+// import butterflyAsset from "@/assets/butterfly.png.asset.json";
+import ButterflyImg from "@/assets/butterfly.png";
+
 
 /**
  * Hero butterfly. Uses the provided blue-morpho PNG.
@@ -7,6 +9,7 @@ import butterflyAsset from "@/assets/butterfly.png.asset.json";
  * to the top-right along a bezier path as the user scrolls.
  * Subtle wing "flap" is faked via scaleX pulsing of the image.
  */
+
 export function Butterfly() {
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [scroll, setScroll] = useState(0);
@@ -92,7 +95,7 @@ export function Butterfly() {
       aria-hidden
     >
       <img
-        src={butterflyAsset.url}
+        src={ButterflyImg}
         alt=""
         draggable={false}
         style={{
