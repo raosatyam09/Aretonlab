@@ -90,7 +90,7 @@ export function Hero() {
           </h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 1, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.15, duration: 0.8, ease }}
             className="mt-8 text-[var(--muted)] text-base md:text-lg leading-relaxed max-w-[520px]"

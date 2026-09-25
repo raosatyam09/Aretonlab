@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 // import aretonLogo from "@/assets/areton-logo.png.asset.json";
-import aretonLogo from "@/assets/areton-logo.png";
+import aretonLogo from "@/assets/areton-logo1.png";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +38,7 @@ export function Navbar() {
             <img
               src={aretonLogo}
               alt="Areton Labs"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-14 md:h-16 w-auto object-cover"
             />
           </a>
 

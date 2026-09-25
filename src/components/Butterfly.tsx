@@ -59,7 +59,7 @@ export function Butterfly() {
   // Home: mobile → top-right just below the hamburger menu button.
   // Desktop → a bit lower-right, aligned with the "gap" line of hero text.
   const home = isMobile
-    ? { x: W - 70, y: 110 }
+    ? { x: W/2 , y: 110 }
     : { x: Math.min(W - 140, W * 0.74), y: Math.max(220, H * 0.56) };
   const dest = { x: W + 160, y: -160 };
   const ctrl = { x: W * 1.1, y: H * 0.08 };
@@ -76,7 +76,7 @@ export function Butterfly() {
   // wing flap: scaleX from ~0.55 to 1 via abs(sin)
   const flap = 0.55 + 0.45 * Math.abs(Math.sin(flapRef.current));
 
-  const baseSize = isMobile ? 110 : 220; // px
+  const baseSize = isMobile ? 210 : 620; // px
 
   return (
     <div

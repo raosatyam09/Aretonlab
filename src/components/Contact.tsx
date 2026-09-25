@@ -108,20 +108,20 @@ export function Contact() {
               </div>
               <div>
                 <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Call Us</div>
-                <a href="tel:+11010101010"
+                <a href="tel: 7523966684"
                    className="font-display text-xl md:text-2xl text-[var(--white-soft)] hover:text-[var(--violet-light)] transition-colors inline-flex items-center gap-3">
                   <Phone className="w-5 h-5 text-[var(--violet-light)]" />
-                  +1 010-101-0100
+                  +91 7523966684
                 </a>
               </div>
               <div>
                 <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Location</div>
                 <p className="text-[var(--muted)] inline-flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-[var(--violet-light)]" />
-                  Operating across continents · Headquartered in the cloud
+                  New Delhi , India
                 </p>
               </div>
-              <div>
+              {/* <div>
                 <div className="font-mono-eyebrow text-[var(--dust)] mb-3">Follow</div>
                 <div className="flex gap-3">
                   <a href="https://www.linkedin.com/company/areton-labs" target="_blank" rel="noopener noreferrer"
@@ -130,7 +130,7 @@ export function Contact() {
                     <IconLinkedIn className="w-4 h-4" />
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
 

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 // import butterflyAsset from "@/assets/butterfly.png.asset.json";
 import ButterflyImg from "@/assets/butterfly.png";
-
 import { Earth3D } from "@/components/Earth3D";
 
 const fadeUp = {
